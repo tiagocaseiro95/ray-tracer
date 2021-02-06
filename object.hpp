@@ -3,7 +3,9 @@
 #include <iostream>
 #include <string>
 
-#include "ray.hpp"
+#include "geometry.hpp"
+
+class Ray;
 
 class Object {
   public:
@@ -18,7 +20,7 @@ class Object {
 class Sphere : public Object {
   public:
     ~Sphere() = default;
-    Sphere(const Vec3f& _center, float _radius) : Object(), center_{_center}, radius_{_radius} {}
+    Sphere(const Vec3f&, float);
     bool intersects(const Ray&) override;
 
   protected:

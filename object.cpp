@@ -3,6 +3,11 @@
 #include <cmath>
 #include <sstream>
 
+#include "ray.hpp"
+
+Sphere::Sphere(const Vec3f& _center, float _radius)
+  : Object(), center_{_center}, radius_{_radius} {}
+
 bool Sphere::intersects(const Ray& ray) {
     auto l   = center_ - ray.origin_;
     auto tca = l.dotProduct(ray.direction_);
