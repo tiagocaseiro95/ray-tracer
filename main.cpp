@@ -62,11 +62,11 @@ int main() {
 
     // Generate random spheres
     for (auto i = 0; i < objects.size(); i++) {
-        auto randPos = Vec3f((0.5 - dis(gen)) * 10, (0.5 - dis(gen)) * 10, (0.5 + dis(gen) * 10));
-        auto randRadius = float(0.5 + dis(gen) * 0.5);
-        auto randColor  = Vec3f{(float)dis(gen), (float)dis(gen), (float)dis(gen)};
+        auto center = Vec3f((0.5 - dis(gen)) * 10, (0.5 - dis(gen)) * 10, (0.5 + dis(gen) * 10));
+        auto radius = float(0.5 + dis(gen) * 0.5);
+        auto color  = Vec3f{(float)dis(gen), (float)dis(gen), (float)dis(gen)};
 
-        objects[i] = std::make_unique<Sphere>(randPos, randRadius, randColor);
+        objects[i] = std::make_unique<Sphere>(center, radius, color);
     }
 
     for (auto i = 0; i < HEIGHT; i++) {
