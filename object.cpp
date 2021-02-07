@@ -5,8 +5,10 @@
 
 #include "ray.hpp"
 
-Sphere::Sphere(const Vec3f& _center, float _radius)
-  : Object(), center_{_center}, radius_{_radius} {}
+Object::Object(const Vec3f& _color) : color_{_color} {}
+
+Sphere::Sphere(const Vec3f& _center, float _radius, const Vec3f& _color)
+  : Object(_color), center_{_center}, radius_{_radius} {}
 
 bool Sphere::intersects(const Ray& ray) {
     auto l   = center_ - ray.origin_;
